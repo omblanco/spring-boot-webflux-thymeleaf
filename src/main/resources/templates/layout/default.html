@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+    th:fragment="layout (content, menu, links, scripts)">
+    
+    <head>
+        <title th:text="#{application.title}"></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+        
+        <!--/* Layout Common Css */-->
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        
+        <!--/* View Css */-->
+        <th:block th:replace="${links}" />
+    </head>
+    
+    <body>
+    
+    <header th:replace="~{layout/header :: header}"></header>
+    <div class="container my-3" id ="map" sec:authorize="isAuthenticated()"> </div> 
+    <th:block th:replace="${content}" />
+    
+    
+    <script th:inline="javascript" th:with="path=@{/}">
+       /*Variable con el path de la aplicación */
+       var CONTEXT_PATH = [[${path}]];
+    </script>
+    <!--/* Layout Common Scripts */-->
+    <script th:src="@{/js/vendor/jquery-1.9.1.min.js}"></script>
+    <th:block >
+      <!--/* View Scripts */-->
+        <th:block th:replace="${scripts}" />
+    </th:block>
+    </body>
+</html>

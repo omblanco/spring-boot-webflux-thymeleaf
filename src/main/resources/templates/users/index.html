@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layout/default :: layout (~{::#content}, 'geonames', _, ~{::script})}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{application.title}"></title>
+</head>
+<body>
+
+    <div id="content">
+            
+        <div class="container">
+            <h3 class="my-3" th:text="#{index.users}"></h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" th:text="#{user.id}"></th>
+                        <th scope="col" th:text="#{user.name}"></th>
+                        <th scope="col" th:text="#{user.surname}"></th>
+                        <th scope="col" th:text="#{user.birthdate}"></th>
+                        <th scope="col" th:text="#{user.email}"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.surname}"></td>
+                        <td th:text="${user.birthdate}"></td>
+                        <td th:text="${user.email}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+    </div>
+ 
+    <script th:src="@{/js/vendor/bootstrap.min.js}"></script>
+</body>
+</html>
