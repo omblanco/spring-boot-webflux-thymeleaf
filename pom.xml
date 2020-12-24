@@ -16,9 +16,11 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<spring-boot-webflux-multi-module-api-client.version>1.0.0</spring-boot-webflux-multi-module-api-client.version>
 	</properties>
 
 	<dependencies>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -48,6 +50,12 @@
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.omblanco.springboot.webflux.api</groupId>
+			<artifactId>spring-boot-webflux-multi-module-api-client</artifactId>
+			<version>${spring-boot-webflux-multi-module-api-client.version}</version>
 		</dependency>
 	</dependencies>
 
