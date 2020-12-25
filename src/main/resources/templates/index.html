@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layout/default :: layout (~{::#content}, 'geonames', _, ~{::script})}">
+<head>
+<meta charset="UTF-8">
+<title th:text="#{application.title}"></title>
+</head>
+<body>
+
+    <div id="content">
+
+        <div class="container">
+            <div class="card">
+                <div class="card-header" th:text="#{appinfo.title}">Featured</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong th:text="#{appinfo.environment} + ': '"></strong> <span th:text="${appinfo.environment}"></span></li>
+                        <li class="list-group-item"><strong th:text="#{appinfo.version} + ': '"></strong> <span th:text="${appinfo.version}"></span></li>
+                        <li class="list-group-item"><strong th:text="#{appinfo.now} + ': '"></strong> <span th:text="${#dates.format(appinfo.now, 'dd/MM/yyyy HH:mm:ss')}"></span></li>
+                        <li class="list-group-item"><strong th:text="#{appinfo.name} + ': '"></strong> <span th:text="${appinfo.name}"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script th:src="@{/js/vendor/bootstrap.min.js}"></script>
+</body>
+</html>
