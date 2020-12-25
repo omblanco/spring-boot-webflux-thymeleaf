@@ -1,2 +1,17 @@
-# spring-boot-webflux-thymeleaf
+# Spring Boot Webflux Thymeleaf
 Spring Boot Webflux Thymeleaf
+
+## Índice
+- [Descripción](#descripción)
+- [Uso](#uso)
+
+## Descripción
+
+Aplicación de ejemplo con Webflux y Thymeleaf que hace uso del client de usuarios de las versiones MySQ y MongoDB de las aplicaciones [Spring Boot WebFlux Simple Api](https://github.com/omblanco/spring-boot-webflux-simple-api)
+ y [Spring Boot Webflux Multi Module Api](https://github.com/omblanco/spring-boot-webflux-multi-module-api). 
+
+## Uso
+
+Desplegar las versiones MySQL y MongoDB de la aplicación [Spring Boot Webflux Multi Module Api](https://github.com/omblanco/spring-boot-webflux-simple-api#uso)
+Desplegar la aplicación Spring Boot Webflux Thymeleaf siguiendo las mismas pautas.
+Acceder a la url http://localhost:8082/users
